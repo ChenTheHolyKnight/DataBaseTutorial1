@@ -35,6 +35,9 @@
             this.btnAddReceipe = new System.Windows.Forms.Button();
             this.textReceipe1 = new System.Windows.Forms.TextBox();
             this.btnUpdateReceipe = new System.Windows.Forms.Button();
+            this.lstAllIngredients = new System.Windows.Forms.ListBox();
+            this.lblAllIngredients = new System.Windows.Forms.Label();
+            this.BtnSelectIngredient = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblReceipes
@@ -76,9 +79,9 @@
             // 
             // btnAddReceipe
             // 
-            this.btnAddReceipe.Location = new System.Drawing.Point(331, 188);
+            this.btnAddReceipe.Location = new System.Drawing.Point(476, 130);
             this.btnAddReceipe.Name = "btnAddReceipe";
-            this.btnAddReceipe.Size = new System.Drawing.Size(93, 23);
+            this.btnAddReceipe.Size = new System.Drawing.Size(100, 23);
             this.btnAddReceipe.TabIndex = 4;
             this.btnAddReceipe.Text = "Add Receipe";
             this.btnAddReceipe.UseVisualStyleBackColor = true;
@@ -86,26 +89,57 @@
             // 
             // textReceipe1
             // 
-            this.textReceipe1.Location = new System.Drawing.Point(302, 152);
+            this.textReceipe1.Location = new System.Drawing.Point(447, 89);
             this.textReceipe1.Name = "textReceipe1";
             this.textReceipe1.Size = new System.Drawing.Size(153, 20);
             this.textReceipe1.TabIndex = 5;
             // 
             // btnUpdateReceipe
             // 
-            this.btnUpdateReceipe.Location = new System.Drawing.Point(331, 226);
+            this.btnUpdateReceipe.Location = new System.Drawing.Point(476, 173);
             this.btnUpdateReceipe.Name = "btnUpdateReceipe";
-            this.btnUpdateReceipe.Size = new System.Drawing.Size(93, 23);
+            this.btnUpdateReceipe.Size = new System.Drawing.Size(100, 23);
             this.btnUpdateReceipe.TabIndex = 6;
             this.btnUpdateReceipe.Text = "Update Receipe Name";
             this.btnUpdateReceipe.UseVisualStyleBackColor = true;
             this.btnUpdateReceipe.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lstAllIngredients
+            // 
+            this.lstAllIngredients.FormattingEnabled = true;
+            this.lstAllIngredients.Location = new System.Drawing.Point(283, 89);
+            this.lstAllIngredients.Name = "lstAllIngredients";
+            this.lstAllIngredients.Size = new System.Drawing.Size(120, 160);
+            this.lstAllIngredients.TabIndex = 8;
+            // 
+            // lblAllIngredients
+            // 
+            this.lblAllIngredients.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAllIngredients.Location = new System.Drawing.Point(284, 49);
+            this.lblAllIngredients.Name = "lblAllIngredients";
+            this.lblAllIngredients.Size = new System.Drawing.Size(119, 33);
+            this.lblAllIngredients.TabIndex = 7;
+            this.lblAllIngredients.Text = "All Ingredients";
+            this.lblAllIngredients.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BtnSelectIngredient
+            // 
+            this.BtnSelectIngredient.Location = new System.Drawing.Point(476, 213);
+            this.BtnSelectIngredient.Name = "BtnSelectIngredient";
+            this.BtnSelectIngredient.Size = new System.Drawing.Size(100, 23);
+            this.BtnSelectIngredient.TabIndex = 9;
+            this.BtnSelectIngredient.Text = "Select Ingredient";
+            this.BtnSelectIngredient.UseVisualStyleBackColor = true;
+            this.BtnSelectIngredient.Click += new System.EventHandler(this.BtnSelectIngredient_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 261);
+            this.ClientSize = new System.Drawing.Size(803, 432);
+            this.Controls.Add(this.BtnSelectIngredient);
+            this.Controls.Add(this.lstAllIngredients);
+            this.Controls.Add(this.lblAllIngredients);
             this.Controls.Add(this.btnUpdateReceipe);
             this.Controls.Add(this.textReceipe1);
             this.Controls.Add(this.btnAddReceipe);
@@ -130,6 +164,9 @@
         private System.Windows.Forms.Button btnAddReceipe;
         private System.Windows.Forms.TextBox textReceipe1;
         private System.Windows.Forms.Button btnUpdateReceipe;
+        private System.Windows.Forms.ListBox lstAllIngredients;
+        private System.Windows.Forms.Label lblAllIngredients;
+        private System.Windows.Forms.Button BtnSelectIngredient;
     }
 }
 

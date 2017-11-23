@@ -25,6 +25,7 @@ namespace CookBook
         private void FrmMain_Load(object sender, EventArgs e)
         {
             PopulateReceipes();
+            PopulateAllIngridents();
             
         }
 
@@ -38,6 +39,19 @@ namespace CookBook
                 lstReceipes.DisplayMember = "Name";
                 lstReceipes.ValueMember = "Id";
                 lstReceipes.DataSource = receipeTable;
+            }
+        }
+
+        private void PopulateAllIngridents() {
+            using (connection = new SqlConnection(connectionStr))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("Select * From Ingredient", connection))
+            {
+                DataTable ingredientDataTable = new DataTable();
+                adapter.Fill(ingredientDataTable);
+
+                lstAllIngredients.DisplayMember = "Name";
+                lstAllIngredients.ValueMember = "Id";
+                lstAllIngredients.DataSource=ingredientDataTable;
             }
         }
 
@@ -62,6 +76,8 @@ namespace CookBook
 
             }
         }
+
+
 
         private void lstReceipes_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -100,6 +116,23 @@ namespace CookBook
             }
 
             PopulateReceipes();
+        }
+
+        private void BtnSelectIngredient_Click(object sender, EventArgs e)
+        {
+            string query = "INSERT INTO ReceipeIngredient VALUES(@ReceipeId,@IngredientId)";
+            using (connection = new SqlConnection(connectionStr))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                connection.Open();
+
+                command.Parameters.AddWithValue("@ReceipeId", lstReceipes.SelectedValue);
+                command.Parameters.AddWithValue("@IngredientId", lstAllIngredients.SelectedValue);
+
+                command.ExecuteScalar();
+            }
+            PopulateReceipes();
+
         }
     }
 }
